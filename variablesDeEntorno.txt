@@ -1,0 +1,73 @@
+se utilizan variables de entorno para poder separar bases de datos en este caso
+una basse de dats se utilizaria para entorno local y tra para entorno de produccion
+ '
+sudo -i -u postgres
+password
+
+psql
+
+create or drop database nameDatabase;
+\c nameDatabase to connect to the data base
+\l lista de databases
+\dt display tables
+\ds display sequence
+
+
+migrate:
+rollback --step=1
+rollback --step=2
+
+fresh ---> para brrar y corregir los datos de la tabla
+refresh----> hara un rollback y tambn hara un migrate en las tablas corresondientes
+migration = podremos crear migraciones nuevas create_nombre_table ....
+rollback
+
+
+una forma para consultar la base de datos
+
+use DB;
+
+$variableName = DB::table('tableName')->get();
+return view('blade', compact('variableName'));
+y ahora en la vista llamaremos como objetos en este caso
+{!! <li> $variableName->title  </li>  !!}
+
+
+
+ORM == object relational mapping
+
+mapear objetos a datos en la base de datos
+para hacer una tabla necesitamos traer eliminar u otras
+en este caso utilizariamos
+search, delete, update, find();
+
+para trabajar con eloquent necesitamos empezar creando un modelo
+
+metodos  = Orderby, get, from, where, select, latest.+
+
+
+
+
+
+{!! $errors->first('email','<li class="btn btn-danger">:message</li>') !!}
+
+para hacer en este caso una contional usaremos este aptron
+si errors me trae email vamos a pasar el mensaje de falta tal cosa en este ejp email
+el first se utilizaria si encuentra primero email me traeras email , si no me pasaras el mensaje prescrito con
+lo q hace falta
+
+usaremos helpers para crear funciones q se utilizaran todo el tiempo en este caso
+una donde tengamos q hacer un redirect to this route =
+{
+    {{ setActive('home')}}
+
+    -------------------metodo --------------------
+
+    function setActive($routeName)
+    {
+        return request()->routeIs($routeName) ? 'active' : '';
+    }
+}
+
+
+
