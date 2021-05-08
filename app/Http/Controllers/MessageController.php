@@ -24,8 +24,8 @@ class MessageController extends Controller
 
         Mail::to(request('email'))->queue(new MessageReceived($message));
 
-        return 'Mensaje Enviado';
-        //redirect(route('Messages', 'Mensaje Enviado'))
+        return redirect()->route('contact')->with('info', 'Message was sent succesfully ');
+
     }
 
 }

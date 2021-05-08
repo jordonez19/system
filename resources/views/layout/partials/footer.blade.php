@@ -1,5 +1,4 @@
 {{-- FOOTER --}}
-<hr>
 <footer class="container absolute-bottom p-3 mb-2 bg-light text-white shadow-sm p-3 mb-5 bg-body rounded">
     <div class="row">
       <div class="col-12 col-md">
@@ -45,4 +44,6 @@
         </ul>
       </div>
     </div>
-  </footer>
+</footer>
+<img  src="http://www.icewellrepair.in/assets/images/shape/test_footer_shape.png" alt="">
+

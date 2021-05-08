@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\SaveProyectRequest;
 use App\Project;
+use PhpParser\Node\Stmt\Return_;
 
 class ProjectController extends Controller
 {
@@ -15,7 +16,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::orderBy('created_at', 'desc')->paginate(10);
+        $projects = Project::orderBy('created_at', 'desc')->paginate(1);
 
         return view('projects.index', compact('projects'));
 
@@ -33,10 +34,11 @@ class ProjectController extends Controller
         return view('projects.create');
     }
 
-
-    public function store()
+    public function store(Request $request)
     {
-        Project::create(request()->validate(
+
+
+            Project::create(request()->validate(
         [
             'title'=>'required|min:3',
             'description'=>'required|min:3'
@@ -50,30 +52,33 @@ class ProjectController extends Controller
         return redirect(route('project.index'));
     }
 
-
-
-
-
     public function edit($id)
     {
         $project = Project::findOrFail($id);
         return view('projects.edit', compact('project'));
     }
 
-
-
-
-
-
     public function update(Project $project, SaveProyectRequest $request)
     {
         $project->update([
             'title' => request('title'),
-            'description' => request('description')
+            'description' => request('description'),
+            'image' => request('image')
         ]);
 
         return redirect(route('project.index'));
     }
+
+    public function destroy(Project $project){
+
+
+        $project->delete();
+
+
+        return redirect(route('project.index'));
+
+    }
+
 }
 
 

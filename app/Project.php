@@ -7,9 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
 
-
     protected $fillable = [
-        'title', 'description', 'updated_at'
+        'title', 'description', 'image', 'updated_at'
     ];
 
 

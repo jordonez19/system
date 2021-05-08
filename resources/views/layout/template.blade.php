@@ -14,27 +14,58 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+
+    <style>
+    .blog-img {
+        width: 100%;
+        height: 407px;
+        display: flex;
+    }
+    img{
+        width: 100%;
+    }
+    .active{
+        background-color: rgb(59, 59, 59);
+    }
+    input[type="file"] {
+        position: absolute;
+        margin: 27% 0 0 82%;
+    }
+
+
+</style>
+
 </head>
-<body style="background-color: white">
+<body>
+
+
+        @yield('blog-img')
+
+
 
 {{-- Nav Bar --}}
-
-@include('partials.nav')
+@include('layout.partials.nav')
+{{-- End Nav Bar --}}
 
 {{-- Content --}}
-
 <div class="container mt-5 ">
     @yield('content')
 </div>
+{{-- End Content --}}
+
+{{-- Footer --}}
+<br><br>
+<div class=" w-100 bg-gradient-dark">
+    @include('layout.partials.footer')
+</div>
+{{-- End Footer --}}
+
 
 {{-- Script --}}
 <div class="script">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </div>
+{{-- End Script --}}
 
-<br><br>
-<div class="container w-100 bg-gradient-dark">
-@include('partials.footer')
-</div>
 </body>
 </html>
