@@ -2,7 +2,7 @@
 @section('title','contact')
 @section('content')
 
-<h1 class="ms-4 text-uppercase pe-none btn btn-dark btn-lg d-grid gap-2 " style="font-size: 30px;" >Contacts</h1>
+<h1 class=" text-uppercase pe-none btn btn-dark btn-lg d-grid gap-2 " style="font-size: 30px;" >Contact Me</h1>
 <div class="container">
     <form method="POST" action="">
         @csrf {{-- token para q el formulario se vuelva mas seguro --}}

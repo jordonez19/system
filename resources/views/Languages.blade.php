@@ -3,7 +3,7 @@
 @section('content')
 
     {{-- Title  --}}
-    <h1 class="m-2 mb-5 text-uppercase pe-none btn btn-dark btn-lg d-grid gap-2   shadow-lg  bg rounded" style="font-size: 30px;"  >Projects</h1>
+    <h1 class="m-2 mb-5 text-uppercase pe-none btn btn-dark btn-lg d-grid gap-2   shadow-lg  bg rounded" style="font-size: 30px;"  >languages</h1>
     {{-- end-Title  --}}
 
     {{-- Content projects --}}
@@ -37,10 +37,6 @@
         @endforelse
     </div>
     {{-- End Content projects --}}
-
-
-
-
 
 @endsection
 

@@ -20,8 +20,10 @@ Route::post('/contact', 'MessageController@store')->name('Messages');
 
 /* PROJECT CONTROLLER */
 
-Route::resource('/project', 'ProjectController')->name('project');
+Route::resource('/project', 'ProjectController')->names('project');
 
 
+
+//Route::view('/language', 'projects.index')->name('language');
 
 

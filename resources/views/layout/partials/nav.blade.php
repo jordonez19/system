@@ -5,7 +5,7 @@
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
             <a class="navbar-brand nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ChaviWeb
+            ChaviBlog
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                 <li><a class="dropdown-item" href="#">Action</a></li>
@@ -27,6 +27,9 @@
                 <li class="nav-item {{request()->routeIs('contact') ? 'active' : ''}}">
                     <a class="nav-link" href="{{route('contact')}}">Contact</a>
                 </li>
+               {{--  <li class="nav-item {{request()->routeIs('language') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('language')}}">Language</a>
+                </li> --}}
                 <li class="nav-item {{request()->routeIs('project.*') ? 'active' : ''}}">
                     <a class="nav-link" href="{{route('project.index')}}">projects</a>
                 </li>

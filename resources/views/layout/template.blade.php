@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
 
-    <style>
+<style>
     .blog-img {
         width: 100%;
         height: 407px;
@@ -27,10 +27,24 @@
     .active{
         background-color: rgb(59, 59, 59);
     }
-    input[type="file"] {
-        position: absolute;
-        margin: 27% 0 0 82%;
+    a.page-link{
+        color: black;
     }
+    span.page-link {
+        color: rgb(0, 0, 0);
+    }
+    .page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #3b3b3b;
+    border-color: #070707;
+}
+h1{
+    text-align: center;
+}
+.img-chavi{
+    border-radius: 50%;
+}
 
 
 </style>
@@ -39,7 +53,7 @@
 <body>
 
 
-        @yield('blog-img')
+@yield('blog-img')
 
 
 
