@@ -31,7 +31,7 @@
                 <textarea name="comments" class="form-control" placeholder="Leave a comment here"></textarea>
             </div>
                 {!! $errors->first('comments','<li class="btn btn-danger">:message</li>') !!}
-            <br>
+            <br><br>
             <div>
                 <button type="submit" class="btn btn-dark">Submit</button>
             </div>

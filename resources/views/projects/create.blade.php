@@ -11,16 +11,23 @@
             <input name="title" value="{{old('email')}}" type="text" class="form-control"  >
             <br>
             {!! $errors->first('title', '<li class="btn btn-danger">:message</li> ')!!}
-
         </div>
+
         <div class="mb-3">
             <label class="form-label fw-bold ">URL</label>
+            <input name="url" value="{{old('email')}}" type="text" class="form-control" >
+            <br>
+            {!! $errors->first('url', '<li class="btn btn-danger">:message</li> ')!!}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold ">Description</label>
             <input name="description" value="{{old('email')}}" type="text" class="form-control" >
             <br>
             {!! $errors->first('description', '<li class="btn btn-danger">:message</li> ')!!}
         </div>
 
-        
+
         <br>
         <div>
             <a href="{{route('project.index')}}" class="btn btn-danger">Back</a>

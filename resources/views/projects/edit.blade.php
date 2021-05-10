@@ -16,6 +16,13 @@
 
         </div>
 
+        <div class="mb-3">
+            <label class="form-label fw-bold ">URL</label>
+            <input name="url" value="{{old('url', $project->url)}}" type="text" class="form-control" >
+            <br>
+            {!! $errors->first('url', '<li class="btn btn-danger">:message</li> ')!!}
+        </div>
+
 
         <div class="mb-3">
             <label class="form-label fw-bold ">Description</label>

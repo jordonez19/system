@@ -16,7 +16,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::orderBy('created_at', 'asc')->paginate(5);
+        $projects = Project::orderBy('created_at', 'asc')->paginate(1);
 
         return view('projects.index', compact('projects'));
 
@@ -41,10 +41,12 @@ class ProjectController extends Controller
             Project::create(request()->validate(
         [
             'title'=>'required|min:3',
+            'url'=>'required',
             'description'=>'required|min:3'
         ],
         [
             'title.required'=>'The name field is required',
+            'url.required'=>'The url field is required',
             'description.required'=>'The description field is required'
         ]
     ));
@@ -63,7 +65,6 @@ class ProjectController extends Controller
         $project->update([
             'title' => request('title'),
             'description' => request('description'),
-            'image' => request('image')
         ]);
 
         return redirect(route('project.index'));

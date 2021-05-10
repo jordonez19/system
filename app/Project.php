@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
 
-    protected $fillable = [
-        'title', 'description', 'image', 'updated_at'
-    ];
+    /* protected $fillable = [
+        'title', 'url', 'description', 'image', 'updated_at'
+    ]; */
+
+    protected $guarded = [];
 
 
 }

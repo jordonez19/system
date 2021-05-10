@@ -17,7 +17,10 @@ class MessageController extends Controller
             'subject'=>'required',
             'comments'=>'required|min:3'],
             [
-                'name.required'=>'put the name'
+                'name.required'=>'field name is required',
+                'email.required'=>'field email is required ',
+                'subject.required'=>'field subject is required ',
+                'comments.required'=>'field comments is required ',
             ]
         );
                 //enviar el email

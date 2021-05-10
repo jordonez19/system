@@ -25,7 +25,7 @@
         width: 100%;
     }
     .active{
-        background-color: rgb(59, 59, 59);
+        background-color: rgb(126, 126, 126);
     }
     a.page-link{
         color: black;

@@ -23,6 +23,8 @@
                     alt="...">
                 </div>
                 <div class="card-header text-center">
+                    {{-- <p class="card-text user-select-none">{{$project->url}}</p> --}}
+
                     <p class="card-text user-select-none">{{$project->description}}</p>
                     <form action="{{route('project.destroy', $project)}}" method="post">
                         <a class='btn btn-dark' href="{{route('project.edit', $project)}}">Edit</a>
