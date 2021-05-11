@@ -23,6 +23,5 @@ Route::post('/contact', 'MessageController@store')->name('Messages');
 Route::resource('/project', 'ProjectController')->names('project');
 
 
-//Route::view('/language', 'projects.index')->name('language');
 
 

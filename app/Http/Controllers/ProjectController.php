@@ -19,14 +19,12 @@ class ProjectController extends Controller
         $projects = Project::orderBy('created_at', 'asc')->paginate(1);
 
         return view('projects.index', compact('projects'));
-
     }
 
     public function show($id)
     {
         $project = Project::findOrFail($id);
         return view('projects.show', compact('project'));
-
     }
 
     public function create()
@@ -34,24 +32,14 @@ class ProjectController extends Controller
         return view('projects.create');
     }
 
-    public function store(Request $request)
+    public function store(SaveProyectRequest  $request, Project $project)
     {
-
-
-            Project::create(request()->validate(
-        [
-            'title'=>'required|min:3',
-            'url'=>'required',
-            'description'=>'required|min:3'
-        ],
-        [
-            'title.required'=>'The name field is required',
-            'url.required'=>'The url field is required',
-            'description.required'=>'The description field is required'
-        ]
-    ));
-
-        return redirect(route('project.index'));
+            Project::create([
+                'title' => request('title'),
+                'description' => request('description'),
+                'url' => request('url')
+            ]);
+            return redirect(route('project.index'));
     }
 
     public function edit($id)
@@ -62,22 +50,19 @@ class ProjectController extends Controller
 
     public function update(Project $project, SaveProyectRequest $request)
     {
-        $project->update([
+        $project->update(
+            [
             'title' => request('title'),
             'description' => request('description'),
-        ]);
-
-        return redirect(route('project.index'));
+            ]
+        );
+            return redirect(route('project.index'));
     }
 
-    public function destroy(Project $project){
-
-
+    public function destroy(Project $project)
+    {
         $project->delete();
-
-
         return redirect(route('project.index'));
-
     }
 
 }

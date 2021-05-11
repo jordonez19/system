@@ -10,12 +10,13 @@ class MessageController extends Controller
 {
     public function store(Request $request)
     {
-
-        $message = request()->validate([
-            'name'=>'required',
-            'email'=>'required|email',
-            'subject'=>'required',
-            'comments'=>'required|min:3'],
+        $message = request()->validate(
+            [
+                'name'=>'required',
+                'email'=>'required|email',
+                'subject'=>'required',
+                'comments'=>'required|min:3'
+            ],
             [
                 'name.required'=>'field name is required',
                 'email.required'=>'field email is required ',
@@ -23,12 +24,10 @@ class MessageController extends Controller
                 'comments.required'=>'field comments is required ',
             ]
         );
-                //enviar el email
-
+        //Sent Mail
         Mail::to(request('email'))->queue(new MessageReceived($message));
-
         return redirect()->route('contact')->with('info', 'Message was sent succesfully ');
-
+        //End send Mail
     }
 
 }

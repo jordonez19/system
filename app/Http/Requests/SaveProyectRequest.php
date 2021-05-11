@@ -15,7 +15,6 @@ class SaveProyectRequest extends FormRequest
     {
         return true;
     }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -24,19 +23,18 @@ class SaveProyectRequest extends FormRequest
     public function rules()
     {
         return [
-
             'title'=>'required|min:3',
-            'description'=>'required|min:3'
-
+            'description'=>'required|min:3',
+            'url'=>'required|min:3'
         ];
     }
-
 
     public function messages()
     {
         return [
-            'title.required' => 'El proyecto necesita un titulo'
+            'title.required'=>'The name field is required',
+            'url.required'=>'The url field is required',
+            'description.required'=>'The description field is required'
         ];
     }
-
 }
