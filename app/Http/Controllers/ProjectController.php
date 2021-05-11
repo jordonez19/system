@@ -18,7 +18,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::orderBy('created_at', 'asc')->paginate(3);
+        $projects = Project::orderBy('created_at', 'desc')->paginate(9);
         return view('projects.index', compact('projects'));
     }
 
@@ -33,25 +33,25 @@ class ProjectController extends Controller
         return view('projects.create');
     }
 
+
     public function store(SaveProyectRequest  $request, Project $project)
     {
-        $path = public_path().'/images';
-        $img = null;
-        File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-        if($request->hasFile('image')){
-            $image = $request->file('image');
-            $img = time().'.'.$image->getClientOriginalExtension();
-            $image->move($path, $img);
-        }
-
+        $image = $request->file('image');
+        $imgName = $image->getClientOriginalName();
+        $imgName = $imgName;
+        $image->storeAs('public', $imgName);
 
             Project::create([
                 'title' => request('title'),
-                'image' => $img,
+                'image' => $imgName,
                 'description' => request('description'),
                 'url' => request('url')
             ]);
+
+            $savedfile = Project::latest()->firstOrFail();
+
             return redirect(route('project.index'));
+
     }
 
     public function edit($id)
