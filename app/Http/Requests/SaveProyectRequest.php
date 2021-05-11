@@ -24,6 +24,7 @@ class SaveProyectRequest extends FormRequest
     {
         return [
             'title'=>'required|min:3',
+            'image'=>'required|min:3',
             'description'=>'required|min:3',
             'url'=>'required|min:3'
         ];
@@ -33,6 +34,7 @@ class SaveProyectRequest extends FormRequest
     {
         return [
             'title.required'=>'The name field is required',
+            'image.required'=>'The image field is required',
             'url.required'=>'The url field is required',
             'description.required'=>'The description field is required'
         ];

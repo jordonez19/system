@@ -33,6 +33,11 @@
         </div>
 {{--End Description--}}
 
+{{-- upload file --}}
+    <label for="">Image:</label>
+    <input type="file" name='image'>
+{{-- End upload file --}}
+
 {{--  Back & Submit --}}
         <br>
         <div>

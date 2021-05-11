@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\SaveProyectRequest;
 use App\Project;
 use PhpParser\Node\Stmt\Return_;
+use File;
+use Imagick;
 
 class ProjectController extends Controller
 {
@@ -16,8 +18,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::orderBy('created_at', 'asc')->paginate(1);
-
+        $projects = Project::orderBy('created_at', 'asc')->paginate(3);
         return view('projects.index', compact('projects'));
     }
 
@@ -34,8 +35,19 @@ class ProjectController extends Controller
 
     public function store(SaveProyectRequest  $request, Project $project)
     {
+        $path = public_path().'/images';
+        $img = null;
+        File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $img = time().'.'.$image->getClientOriginalExtension();
+            $image->move($path, $img);
+        }
+
+
             Project::create([
                 'title' => request('title'),
+                'image' => $img,
                 'description' => request('description'),
                 'url' => request('url')
             ]);
