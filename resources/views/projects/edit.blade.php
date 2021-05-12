@@ -36,6 +36,14 @@
         </div>
 {{--End Description--}}
 
+{{-- upload file --}}
+<div class="mb-3">
+    <label for="">Image:</label>
+    <input type="file" name='image'><br>
+    {!! $errors->first('image', '<li class="btn btn-danger">:message</li> ')!!}
+</div>
+{{-- End upload file --}}
+
 {{--  Back & Submit --}}
         <br>
         <div>

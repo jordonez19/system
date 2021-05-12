@@ -9,7 +9,7 @@
 {{-- CREATE BUTTON --}}
 <div class="container">
     <div class="text-light ">
-        <a class='btn btn-lg btn-dark mb-2 text-capitalize' href='/project/create'>Create</a>
+        <a class='btn btn-lg btn-dark mb-2 text-capitalize justify-content-center right' href='/project/create'>Create</a>
     </div>
 {{-- END CREATE BUTTON --}}
 
@@ -23,15 +23,17 @@
                     </div>
 
                     {{-- IMAGES --}}
-                    <div class="card-header  d-flex justify-content-center ">
-                        {{-- <img src="/images/blog.png" class="card-img-top d-flex justify-content-center " style="height: 8cm; width:80%;" alt="..."> --}}
-                        {{$project->image}}
+                    <div class="card-header  ">
+                        <img src="/images/{{$project->image}}"  style = "height: 250px; width: 100%;" alt="...">
                     </div>
                     {{-- END IMAGES --}}
 
+                    {{-- Description Description --}}
                     <div class="card-header text-center">
                         <h3>Description</h3>
                         <p class="card-text user-select-none">{{$project->description}}</p>
+                        {{-- END Description Description --}}
+
                         {{-- DELETE PROJECT --}}
                         <form action="{{route('project.destroy', $project)}}" method="post">
                             <a class='btn btn-dark' href="{{route('project.edit', $project)}}">Edit</a>
