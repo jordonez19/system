@@ -36,8 +36,8 @@
 
     </footer>
     {{-- Img Footer --}}
-<img  src="http://www.icewellrepair.in/assets/images/shape/test_footer_shape.png" alt="">
+<img  class="" src="http://www.icewellrepair.in/assets/images/shape/test_footer_shape.png" alt="">
 
-<small class="d-block mb-3 text-center mt-3 text-muted">© Chavi's pages 2021</small>
+<small class=" d-block mb-3 text-center mt-3 text-muted">© Chavi's pages 2021</small>
 
 

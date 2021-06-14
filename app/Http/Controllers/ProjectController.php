@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\SaveProyectRequest;
+use Illuminate\Support\Facades\Storage;
 use App\Project;
 use PhpParser\Node\Stmt\Return_;
 use File;
@@ -35,17 +36,21 @@ class ProjectController extends Controller
 
     public function store(SaveProyectRequest  $request, Project $project)
     {
-        $image = $request->file('image');
+/*         $image = $request->file('image');
         $imgName = $image->getClientOriginalName();
         $imgName = $imgName;
-        $image->storeAs('public', $imgName);
+        $image->storeAs('public', $imgName); */
 
-            Project::create([
+        $imagenes = $request->file('image')->store('public/images');
+        $url = Storage::url($imagenes);
+
+        Project::create([
                 'title' => request('title'),
-                'image' => $imgName,
+                'image' => $url,
                 'description' => request('description'),
                 'url' => request('url')
             ]);
+
 
             $savedfile = Project::latest()->firstOrFail();
 

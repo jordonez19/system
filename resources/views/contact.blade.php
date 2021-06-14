@@ -8,45 +8,44 @@
     <form method="POST" action="">
         @csrf {{-- token para q el formulario se vuelva mas seguro --}}
         <div class="container m-2">
-{{-- Name  --}}
+            {{-- Name  --}}
             <div class="mb-3">
                 <label class="form-label fw-bold ">Name</label>
                 <input name="name" value="{{old('name')}}" type="text" class="form-control" placeholder=" Name here"  >
             </div>
                 {!! $errors->first('name','<li class="btn btn-danger">:message</li>') !!}
-{{-- End-Name  --}}
+            {{-- End-Name  --}}
 
-{{-- Email  --}}
+            {{-- Email  --}}
             <div class="mb-3">
                 <label class="form-label fw-bold ">Email</label>
                 <input name="email" value="{{old('email')}}" type="text" class="form-control" placeholder=" Email here" >
             </div>
                 {!! $errors->first('email','<li class="btn btn-danger">:message</li>') !!}
-{{-- End-Email  --}}
+            {{-- End-Email  --}}
 
-{{-- Subject  --}}
+            {{-- Subject  --}}
             <div class="mb-3">
                 <label class="form-label fw-bold ">Subject</label>
                 <input name="subject" value="{{old('subject')}}" type="text" class="form-control" placeholder=" Subject here" >
             </div>
                 {!! $errors->first('subject','<li class="btn btn-danger">:message</li>') !!}
-{{-- End-Subject  --}}
+            {{-- End-Subject  --}}
 
-{{-- Comments  --}}
+            {{-- Comments  --}}
             <div class="mb-3">
                 <label class="form-label fw-bold ">Comments:</label>
                 <textarea name="comments" class="form-control" placeholder="Leave a comment here"></textarea>
             </div>
                 {!! $errors->first('comments','<li class="btn btn-danger">:message</li>') !!}
             <br><br>
-{{-- End-Comments  --}}
+            {{-- End-Comments  --}}
 
-{{-- Submit  --}}
+            {{-- Submit  --}}
             <div>
                 <button type="submit" class="btn btn-dark">Submit</button>
             </div>
-{{-- End-Submit  --}}
-
+            {{-- End-Submit  --}}
         </div>
     </form>
 {{-- End Form contact --}}

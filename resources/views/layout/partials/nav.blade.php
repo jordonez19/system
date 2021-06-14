@@ -4,15 +4,10 @@
     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
-            <a class="navbar-brand nav-link {{-- dropdown-toggle --}}" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ChaviBlog
-            </a>
-            {{-- <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul> --}}
-        </li>
+                <a class="navbar-brand nav-link "  href="{{route('home')}}" >
+                    ChaviBlog
+                </a>
+            </li>
         </ul>
     </div>
     <div class="container-fluid">
@@ -27,8 +22,11 @@
                 <li class="nav-item {{request()->routeIs('project.*') ? 'active' : ''}}">
                     <a class="nav-link" href="{{route('project.index')}}">Briefcase</a>
                 </li>
-                <li class="nav-item {{request()->routeIs('about') ? 'active' : ''}}">
+                <li class="nav-item {{request()->routeIs('cv.*') ? 'active' : ''}}">
                     <a class="nav-link" href="{{route('about')}}">About</a>
+                </li>
+                <li class="nav-item {{request()->routeIs('cv.*') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('cv.index')}}">CV</a>
                 </li>
                 <li class="nav-item {{request()->routeIs('contact') ? 'active' : ''}}">
                     <a class="nav-link" href="{{route('contact')}}">Contact</a>

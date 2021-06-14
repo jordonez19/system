@@ -8,9 +8,9 @@
 
 {{-- CREATE BUTTON --}}
 <div class="container">
-    <div class="text-light ">
-        <a class='btn btn-lg btn-dark mb-2 text-capitalize justify-content-center right' href='/project/create'>Create</a>
-    </div>
+    <div style="text-align-last: right;" class="text-right text-light ">
+        <a class='btn btn-lg btn-dark mb-2 text-capitalize justify-content-center right' href='{{route('project.create')}}'>Create</a>
+    </div><br>
 {{-- END CREATE BUTTON --}}
 
 {{-- PROJECT --}}
@@ -24,7 +24,9 @@
 
                     {{-- IMAGES --}}
                     <div class="card-header  ">
-                        <img src="/images/{{$project->image}}"  style = "height: 250px; width: 100%;" alt="...">
+                        <a href="{{route('project.show',$project)}}">
+                            <img src="{{$project->image}}"  style = "height: 190px; width: 100%;" alt="...">
+                        </a>
                     </div>
                     {{-- END IMAGES --}}
 
@@ -32,6 +34,8 @@
                     <div class="card-header text-center">
                         <h3>Description</h3>
                         <p class="card-text user-select-none">{{$project->description}}</p>
+                        <i class="fab fa-github"></i> <small>Git hub</small><br>
+                        <a href="{{$project->url}}">{{$project->url}}</a>
                         {{-- END Description Description --}}
 
                         {{-- DELETE PROJECT --}}
@@ -46,7 +50,7 @@
                 {{-- END PROJECT --}}
             </div>
         @empty
-            <li class="text-red h3 mb-3">There are not projects, <b class="text-dark">Let's create a new one.</b></li>
+            <li class="text-red h3 mb-3">There are not projects, <b class="text-dark">Let's create a new project!.</b></li>
         @endforelse
             {{ $projects->links()}}
     </div>

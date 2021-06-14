@@ -1,4 +1,6 @@
 <?php
+use App\User;
+use Illuminate\Support\Facades\Input;
 
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +24,6 @@ Route::post('/contact', 'MessageController@store')->name('Messages');
 Route::resource('/project', 'ProjectController')->names('project');
 /* END PROJECT CONTROLLER */
 
-
+Route::resource('/cv', 'CVController')->names('cv');
 
 

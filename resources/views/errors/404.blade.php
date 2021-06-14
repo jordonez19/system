@@ -11,7 +11,7 @@
 <body>
     <div class="container ">
             <img src="/images/404error.png " style="margin: 18vh auto; display: block;" class="d-flex align-items-center" alt="">
-            <a class="btn btn-dark center " style="margin: 10vh auto; display: block;" href="{{route('home')}}">Go Back...</a>
+            {{-- <a class="btn btn-dark center " style="margin: 10vh auto; display: block;" href="{{route('home')}}">Go Back...</a> --}}
     </div>
 
 </body>

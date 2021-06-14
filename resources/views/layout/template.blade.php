@@ -14,7 +14,8 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
-
+    {{-- font awesome --}}
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <style>
     .blog-img {
         width: 100%;
@@ -45,6 +46,9 @@ h1{
 .img-chavi{
     border-radius: 50%;
 }
+
+
+
 
 
 </style>

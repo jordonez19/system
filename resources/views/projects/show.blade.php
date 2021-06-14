@@ -9,8 +9,8 @@
 
 {{-- Description & URL --}}
     <div class="container">
-        <p class=" mt-5 text-capitalize text-center h4 "> {{$project->description}} </p>
-        <p class=" mt-5 text-capitalize text-center "> <strong>URL:</strong> {{$project->url}}  </p>
+            <p class=" mt-5 text-capitalize text-center h4 "> {{$project->description}} </p>
+            <p class=" mt-5 text-capitalize text-center "> <strong>URL:</strong> {{$project->url}}  </p>
     </div>
 {{-- End Description & URL --}}
 </div>
